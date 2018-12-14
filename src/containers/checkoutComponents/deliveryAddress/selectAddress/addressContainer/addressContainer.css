@@ -1,0 +1,14 @@
+.card{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 3px;
+    padding: 15px;
+    font-size: 12px;
+}
+
+.savedAddress{
+    margin-top: 8px;
+    margin-left: 15px;
+}
+.savedAddress .name{
+    font-weight: bold;
+}
