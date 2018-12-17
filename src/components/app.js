@@ -4,7 +4,9 @@ import {Route,Link,Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {handleAuth} from '../actions';
-import Checkout from '../containers/checkoutComponents/checkout'
+import Checkout from '../containers/checkoutComponents/checkout';
+import DateTime from '../containers/dateTime/dateTime';
+import ReviewAndPay from '../containers/reviewAndPay/reviewAndPay';
 
 import './app.css';
 class App extends Component{
@@ -51,6 +53,8 @@ class App extends Component{
               </div> */}
               <div className="routeContainer">     
                <Route path="/checkout/delivery" component={Checkout}/>
+               <Route path="/checkout/dateTime" component={DateTime}/>
+               <Route path="/checkout/reviewAndPay" component={ReviewAndPay}/>
                <Route exact path="/" render={() => (<Redirect to="/checkout/delivery" />)} /> 
                <Route exact path="/checkout" render={() => (<Redirect to="/checkout/delivery" />)} /> 
                <Route path="/post" component={CommentBox} />

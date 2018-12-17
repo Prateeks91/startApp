@@ -10,15 +10,26 @@ class DeliveryAddress extends Component {
 
   checkTabStatus() {
     if (this.props.tabSelected === appConstants.CP) {
-      return(
-        <SelectAddress deliveryHeading={appConstants.SELECT_CP} />
+      return (
+        <SelectAddress deliveryHeading={appConstants.SELECT_CP} addressData={this.props.cpAddress} />
       );
     }
     else {
-      return(
-        <SelectAddress deliveryHeading={appConstants.SELECT_DA } />
+      return (
+        <div>
+          <SelectAddress deliveryHeading={appConstants.SELECT_DA} addressData={this.props.hdAddress} />
+          <div className="row">
+            <div className="billingShippingCompSection">
+              <div className="inlineEl">
+                <img src={CheckedImage} alt="checkedImage" />
+              </div>
+              <div className="inlineEl compText">
+                Billing address is same as my selected delivery address
+           </div>
+            </div>
+          </div>
+        </div>
       )
-
     }
   }
 
@@ -27,16 +38,6 @@ class DeliveryAddress extends Component {
       <div>
         <DeliveryPoint />
         {this.checkTabStatus()}
-        <div className="row">
-          <div className="billingShippingCompSection">
-            <div className="inlineEl">
-              <img src={CheckedImage} alt="checkedImage" />
-            </div>
-            <div className="inlineEl compText">
-              Billing address is same as my selected delivery address
-           </div>
-          </div>
-        </div>
         <div className="row">
           <div className="buttonSection">
             <button>NEXT</button>

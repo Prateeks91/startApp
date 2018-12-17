@@ -14,7 +14,7 @@ export default class Payment extends Component{
                  Products
                </div>
                <div className="col-sm-5 col-md-5 col-lg-5 col-xs-5 rightAl">
-                 SR 0 
+                 SR {this.props.productPrice} 
                </div>
               </div>
               <div className="row payEL">
@@ -22,7 +22,7 @@ export default class Payment extends Component{
                 Service Fee
                </div>
                <div className="col-sm-5 col-md-5 col-lg-5 col-xs-5 rightAl">
-               SR 0
+               SR {this.props.serviceFee}
                </div>
               </div>
               <div className="row payTotal">
@@ -30,7 +30,7 @@ export default class Payment extends Component{
                  Amount inculding VAT
                </div>
                <div className="col-sm-5 col-md-5 col-lg-5 col-xs-5 rightAl">
-               SR 0
+               SR {this.props.vat}
                </div>
               </div>
             </div>   
