@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-
+import BreadCrumb from '../breadCrumb/breadCrumb';
 
 export default class dateTime extends Component{
     render(){
-        return(<div>date time Component here</div>);
+        return(<div>
+            <BreadCrumb />
+             date time Component here
+            </div>);
     }
 }

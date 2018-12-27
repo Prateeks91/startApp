@@ -7,7 +7,14 @@ const appConstants = {
     GET_PRODUCTS: 'Get Products',
     GET_PROFILE: 'Get Profile',
     PROFILE: 'profile',
-    PRODUCT_LIST: 'productList'
+    PRODUCT_LIST: 'productList',
+    CURRENT_STEP: 'currentStep',
+    DELIVERY_ROUTE: '/checkout/delivery',
+    DATETIME_ROUTE: '/checkout/dateTime',
+    REVIEWPAY_ROUTE: '/checkout/reviewAndPay',
+    DELIVERY_FLAG: 0,
+    DATETIME_FLAG: 1,
+    REVIEWPAY_FLAG: 2
 }
 
 export default appConstants;

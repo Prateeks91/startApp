@@ -12,7 +12,7 @@ export default class AddressContainer extends Component{
       }
       return this.props.addressData.map((item)=>{
         return(
-          <div className="row">
+          <div className="row" key={item.name}>
             <div className="col-md-12 col-sm-12 col-lg-12 col-xs-12 ">
              <div className="card">
              <div className="inlineEl radio">

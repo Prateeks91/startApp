@@ -7,6 +7,7 @@ import {handleAuth} from '../actions';
 import Checkout from '../containers/checkoutComponents/checkout';
 import DateTime from '../containers/dateTime/dateTime';
 import ReviewAndPay from '../containers/reviewAndPay/reviewAndPay';
+import Ikealogo from "../assets/IKEA-logo.png";
 
 import './app.css';
 class App extends Component{
@@ -51,6 +52,15 @@ class App extends Component{
                     </li>
                 </ul>
               </div> */}
+
+              <div className="row ikeaHeader">
+                  <div className="col-sm-6 col-md-6 col-lg-6 col-xs-6">
+                   <img src={Ikealogo} alt="ikea logo" />
+                  </div>
+                  <div className="col-sm-6 col-md-6 col-lg-6 col-xs-6">
+                    <div className="returnCart">Return to Cart</div>
+                  </div>
+              </div>  
               <div className="routeContainer">     
                <Route path="/checkout/delivery" component={Checkout}/>
                <Route path="/checkout/dateTime" component={DateTime}/>
@@ -60,6 +70,7 @@ class App extends Component{
                <Route path="/post" component={CommentBox} />
 
               </div> 
+
             </div>);
     }
     
