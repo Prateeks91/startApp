@@ -39,3 +39,24 @@ export function getProfile(){
         payload: axios.get(profileUrl)
     }
 }
+
+export function handleSelectAddress(data){
+    return{
+        type:appConstants.HANLDE_SELECT_ADDRESS,
+        payload:data
+    }
+}
+
+export function handleAddNewAddress(data){
+    return{
+        type: appConstants.HANDLE_ADD_ADDRESS,
+        payload:data
+    }
+}
+
+export function handlePaymentProceed(data){
+    return{
+        type: appConstants.HANDLE_ADD_ADDRESS,
+        payload:data
+    }
+}
