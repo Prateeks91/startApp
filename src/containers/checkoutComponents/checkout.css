@@ -17,3 +17,14 @@
 .checkoutContent{
     padding-top: 40px;
 }
+
+@media(max-width:767px){
+    .Text{
+        width: auto;
+        margin: 0;
+    }
+    .checkoutContent{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

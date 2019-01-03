@@ -60,10 +60,10 @@ class Checkout extends Component{
       <div>
         <BreadCrumb />
         <div className="row checkoutContent">
-          <div className="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+          <div className="col-md-8 col-sm-8 col-lg-8 col-xs-12">
            <DeliveryAddress hdAddress={this.returnAddress(this.addressData,'HD')} cpAddress={this.returnAddress(this.addressData,'CP')}/>
           </div>
-          <div className="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+          <div className="col-md-4 col-sm-4 col-lg-4 col-xs-12">
            <Payment productPrice={this.productData.productPrice} vat={this.productData.vat} serviceFee={this.productData.serviceFee}/>
           </div>
         </div>

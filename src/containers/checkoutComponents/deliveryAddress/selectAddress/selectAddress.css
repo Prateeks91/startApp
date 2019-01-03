@@ -19,3 +19,9 @@
     margin-left: 5px;
 
 }
+
+@media(max-width:767px){
+    .addAddressArea{
+        margin-bottom: 30px;
+    }
+}

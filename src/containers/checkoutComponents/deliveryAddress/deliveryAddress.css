@@ -13,14 +13,3 @@
     background-color: #0074d0;
     border: solid 1px #002f9c;
 }
-
-.billingShippingCompSection{
-    font-size: 12px;
-    margin-top: 30px;
-}
-
-.billingShippingCompSection .compText{
-    vertical-align: top;
-    margin-top: 2px;
-    margin-left: 5px;
-}

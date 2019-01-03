@@ -1,6 +1,15 @@
 import React,{Component} from 'react';
-import './payment.css'
-export default class Payment extends Component{
+import './payment.css';
+import appConstants from '../../../constants';
+import {getSessionData} from '../../../utilities/utility';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+
+class Payment extends Component{
+
+    handlePaymentClick(){
+        const currentStep = getSessionData(appConstants.CURRENT_STEP);
+    }
     render(){
         return(<div>
             <div className="paymentInfo">
@@ -34,9 +43,14 @@ export default class Payment extends Component{
                </div>
               </div>
             </div>   
-            <div className="paymentButton">
-                <button>NEXT</button>
-            </div>    
         </div>);
     }
 }
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+
+  },dispatch);
+}
+
+export default connect(null,mapDispatchToProps)(Payment);

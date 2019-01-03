@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import deliveryIcon from '../../../../assets/ic-home-delivery.svg';
 import collectionPointIcon from '../../../../assets/payCollect.svg';
-import { handleTabSelect } from '../../../../actions';
+import { handleTabSelect, handleSelectAddress } from '../../../../actions';
 import './deliveryPoint.css';
 import appConstants from '../../../../constants';
+import {getLocalData} from '../../../../utilities/utility'
 class DeliveryPoint extends Component {
 
   constructor(props) {
@@ -14,11 +15,14 @@ class DeliveryPoint extends Component {
       activeTab: appConstants.HD
     }
     this.handleTabClick = this.handleTabClick.bind(this);
+    this.addresses = getLocalData(appConstants.PROFILE);
   }
 
   handleTabClick(tabVal) {
     this.setState({ activeTab: tabVal });
     this.props.handleTabSelect(tabVal);
+    const address = this.addresses['addresses'][tabVal];
+    this.props.handleSelectAddress(this.addresses['addresses'][tabVal][0]);
   }
 
   renderActiveButton() {
@@ -33,7 +37,7 @@ class DeliveryPoint extends Component {
       <div>
         <div className="row">
           <div className={"col-sm-6 col-md-6 col-xs-6 col-lg-6 tabDiv " + (this.state.activeTab === appConstants.HD ? 'activeDiv' : '')} onClick={() => this.handleTabClick(appConstants.HD)}>
-            <div className="radio inlineEl">
+            <div className="radio inlineEl hiddenMobile">
               {this.renderActiveButton()}
             </div>
             <div className="imageEl inlineEl">
@@ -45,7 +49,7 @@ class DeliveryPoint extends Component {
             </div>
           </div>
           <div className={"col-sm-6 col-md-6 col-xs-6 col-lg-6 tabDiv " + (this.state.activeTab === appConstants.CP ? 'activeDiv' : '')} onClick={() => this.handleTabClick(appConstants.CP)}>
-            <div className="radio inlineEl">
+            <div className="radio inlineEl hiddenMobile">
               {this.renderActiveButton()}
             </div>
             <div className="imageEl inlineEl">
@@ -63,7 +67,8 @@ class DeliveryPoint extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    handleTabSelect: handleTabSelect
+    handleTabSelect: handleTabSelect,
+    handleSelectAddress:handleSelectAddress
   }, dispatch);
 }
 

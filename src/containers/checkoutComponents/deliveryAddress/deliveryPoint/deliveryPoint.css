@@ -48,3 +48,12 @@
     border: 1px solid #0074d0;
     border-radius: 5px;
 }
+
+@media(max-width:767px){
+    .tabDiv{
+        text-align: center;
+    }
+    .imageEl{
+      margin: 0;
+    }
+}

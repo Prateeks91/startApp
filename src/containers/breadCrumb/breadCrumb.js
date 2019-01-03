@@ -11,29 +11,28 @@ export default class BreadCrumb extends Component {
   }
 
   handleLinkClick(history,path,val){
-   history.push(path);
    setSessionData(appConstants.CURRENT_STEP,val)
+   history.push(path); 
   }
 
   setCurrentStep(){
     this.currentStep = getSessionData(appConstants.CURRENT_STEP);
-    console.log("----------",this.currentStep);
   }
   render() {
     this.setCurrentStep();
     return (<div>
       <div className="breadCrumbHeader row">
-        <div className="borders col-sm-3 col-lg-3 col-xs-3 col-md-3">
+        <div className="borders col-sm-3 col-lg-3 col-md-3 hiddenMobile">
 
         </div>
-        <div className="col-sm-6 col-lg-6 col-xs-6 col-md-6 borders">
+        <div className="col-sm-6 col-lg-6 col-xs-12 col-md-6 borders">
           <Route render={({ history }) => (
             <div className={"delivery linkdirects col-sm-4 col-lg-4 col-xs-4 col-md-4" 
             + (this.currentStep == appConstants.DELIVERY_FLAG ? " activeLink":"" )} 
             onClick={() => { this.handleLinkClick(history,appConstants.DELIVERY_ROUTE,appConstants.DELIVERY_FLAG) }}>
               <div className="linkImage">
               </div>
-              <div className="linkText">
+              <div className="linkText hiddenMobile">
                 Delivery
             </div>
 
@@ -46,7 +45,7 @@ export default class BreadCrumb extends Component {
                    onClick={() => { this.handleLinkClick(history,appConstants.DATETIME_ROUTE,appConstants.DATETIME_FLAG) }}>
               <div className="linkImage">
               </div>
-              <div className="linkText">
+              <div className="linkText hiddenMobile">
                 Date & Time
             </div>
 
@@ -59,7 +58,7 @@ export default class BreadCrumb extends Component {
                       onClick={() => { this.handleLinkClick(history,appConstants.REVIEWPAY_ROUTE,appConstants.REVIEWPAY_FLAG) }}>
               <div className="linkImage">
               </div>
-              <div className="linkText">
+              <div className="linkText hiddenMobile">
                 Review And Pay
             </div>
 
@@ -68,7 +67,7 @@ export default class BreadCrumb extends Component {
 
 
         </div>
-        <div className="borders col-sm-3 col-lg-3 col-xs-3 col-md-3">
+        <div className="borders col-sm-3 col-lg-3  col-md-3 hiddenMobile">
 
         </div>
       </div>
